@@ -34,13 +34,19 @@ layout["Body"].split_row(
 )
 
 layout["Box1"].split_column(
-    Layout(name = "upper_Box1"),
-    Layout(name = "upper_Box2")
+    Layout(name = "left_Box1"),
+    Layout(name = "left_Box2")
 )
 
 layout["Box2"].split_column(
-    Layout(name = "lower_Box1"),
-    Layout(name = "lower_Box2")
+    Layout(name = "right_Box1"),
+    Layout(name = "right_Box2", size=27)
+)
+
+layout["right_Box1"].split_column(
+    Layout(name = "Discount_Panel1", size = 4),
+    Layout(name = "Discount_Panel2", size = 4),
+    Layout(name = "Discount_Panel3", size = 4)
 )
 
 class Header:
@@ -77,24 +83,43 @@ def Order_Database():
     orderDB.add_row("732487621", "17th Avenue, London", "[b red]Cancelled", "Tom")
     orderDB.add_row("959337388", "1st Lane, Liverpool", "[b green]Processing", "Emily")
     orderDB.add_row("222983753", "15th Road, Glasgow", "[b orange]Pending", "Jake")
-    orderDB.add_row("486366593", "21st Boulevard, Edinburgh", "[b purple]Delivered", "Sophie")
-    orderDB.add_row("687292983", "12th Avenue, Bristol", "[b pink]Cancelled", "Oliver")
-    orderDB.add_row("789274839", "9th Street, Newcastle", "[b gray]Processing", "Amelia")
-    orderDB.add_row("346827284", "20th Road, Sheffield", "[b yellow]Shipped", "Harry")
-    orderDB.add_row("574839273", "3rd Lane, Leeds", "[b blue]Delivered", "Emma")
-    orderDB.add_row("273728384", "6th Boulevard, York", "[b red]Pending", "James")
+    orderDB.add_row("486366593", "21st Boulevard, Edinburgh", "[b greed]Delivered", "Sophie")
+    orderDB.add_row("687292983", "12th Avenue, Bristol", "[b red]Cancelled", "Oliver")
+    orderDB.add_row("789274839", "9th Street, Newcastle", "[b green]Processing", "Amelia")
+    orderDB.add_row("346827284", "20th Road, Sheffield", "[b blue]Shipped", "Harry")
+    orderDB.add_row("574839273", "3rd Lane, Leeds", "[b green]Delivered", "Emma")
+    orderDB.add_row("273728384", "6th Boulevard, York", "[b orange]Pending", "James")
     orderDB.add_row("943728291", "7th Street, Cardiff", "[b green]Processing", "Grace")
-    orderDB.add_row("385728394", "2nd Lane, Southampton", "[b orange]Shipped", "Ryan")
-    orderDB.add_row("938472847", "10th Road, Oxford", "[b purple]Cancelled", "Ava")
-    orderDB.add_row("568379274", "5th Boulevard, Cambridge", "[b pink]Delivered", "Ben")
+    orderDB.add_row("385728394", "2nd Lane, Southampton", "[b blue]Shipped", "Ryan")
+    orderDB.add_row("938472847", "10th Road, Oxford", "[b red]Cancelled", "Ava")
+    orderDB.add_row("568379274", "5th Boulevard, Cambridge", "[b green]Delivered", "Ben")
     
     return orderDB
+
+def Discounts_Promotions_1():
+    panel1 = Panel("Get 25% off on our Protein Shack bottles", title = "[b]🔔 New Discount Offer", title_align = "left", border_style="bold white", box = box.SQUARE)
+    
+    return panel1
+
+def Discounts_Promotions_2():
+    panel2 = Panel("Experience a new spicy chicken meal deal", title = "[b]🔔 New Discount Offer", title_align = "left", border_style="bold white", box = box.SQUARE)
+    
+    return panel2
+
+def Discounts_Promotions_3():
+    panel3 = Panel("50% off on our latest GYMBRO clothes, Get yours now", title = "[b]🔔 New Discount Offer", title_align = "left", border_style="bold white", box = box.SQUARE)
+    
+    return panel3
 
 layout["Header"].size = 3
 layout["Footer"].size = 3
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
-layout["upper_Box1"].update(Order_Database())
+layout["left_Box1"].update(Order_Database())
+layout["Discount_Panel1"].update(Discounts_Promotions_1())
+layout["Discount_Panel2"].update(Discounts_Promotions_2())
+layout["Discount_Panel3"].update(Discounts_Promotions_3())
+
 
 username = Prompt.ask("Enter your Username")
 password = Prompt.ask("Enter your password")
@@ -106,17 +131,17 @@ with open('C:\\Users\\hadir\\Documents\\VSC - Projects\\Python\\Protein-Packs\Co
 if ((username == usernames ) and (password == passwords)):
     print(Panel.fit(f"[b]Welcome back {username}, System is updating ...[/]", title = "Welcome", title_align = "left", border_style = "bold green", box = box.SQUARE))
     
-    with Progress() as progress:
+    # with Progress() as progress:
 
-        task1 = progress.add_task("[red]Downloading...", total=1000)
-        task2 = progress.add_task("[green]Processing...", total=1000)
-        task3 = progress.add_task("[blue]Uploading...", total=1000)
+    #     task1 = progress.add_task("[red]Downloading...", total=1000)
+    #     task2 = progress.add_task("[green]Processing...", total=1000)
+    #     task3 = progress.add_task("[blue]Uploading...", total=1000)
 
-        while not progress.finished:
-            progress.update(task1, advance=6)
-            progress.update(task2, advance=4)
-            progress.update(task3, advance=5)
-            time.sleep(0.02)
+    #     while not progress.finished:
+    #         progress.update(task1, advance=6)
+    #         progress.update(task2, advance=4)
+    #         progress.update(task3, advance=5)
+    #         time.sleep(0.02)
     
     print(layout)
 else:
