@@ -12,6 +12,7 @@ from rich.layout import Layout
 from rich.table import Table
 
 from rich.live import Live
+from rich.prompt import Prompt
 
 from rich.traceback import install
 install(show_locals=True)
@@ -67,4 +68,14 @@ layout["Footer"].size = 3
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
 
-print(layout)
+username = Prompt.ask("Enter your Username")
+password = Prompt.ask("Enter your password")
+with open('C:\\Users\\hadir\\Documents\\VSC - Projects\\Python\\Protein-Packs\Code\\logIn_Details.txt','r') as file:
+                  for line in file:
+                        usernames = line.split()[0]
+                        passwords = line.split()[1]
+                        
+if ((username == usernames ) and (password == passwords)):
+    print(Panel.fit(f"[b]Welcome back {username}, System is updating ...[/]", title = "Welcome", title_align = "left", border_style = "bold green", box = box.SQUARE))
+else:
+    print(Panel("Username or Password does not match the database", border_style = "bold red", box = box.SQUARE))
