@@ -140,19 +140,19 @@ with open('C:\\Users\\hadir\\Documents\\VSC - Projects\\Python\\Protein-Packs\Co
                         target = line.split()[2]
                         
 if ((username == usernames ) and (password == passwords)):
-    # print(Panel.fit(f"[b]Welcome back {username}, System is updating ...[/]", title = "Welcome", title_align = "left", border_style = "bold green", box = box.SQUARE))
+    print(Panel.fit(f"[b]Welcome back {username}, System is updating ...[/]", title = "Welcome", title_align = "left", border_style = "bold green", box = box.SQUARE))
     
-    # with Progress() as progress:
+    with Progress() as progress:
 
-    #     task1 = progress.add_task("[red]Downloading...", total=1000)
-    #     task2 = progress.add_task("[green]Processing...", total=1000)
-    #     task3 = progress.add_task("[blue]Uploading...", total=1000)
+        task1 = progress.add_task("[red]Downloading...", total=1000)
+        task2 = progress.add_task("[green]Processing...", total=1000)
+        task3 = progress.add_task("[blue]Uploading...", total=1000)
 
-    #     while not progress.finished:
-    #         progress.update(task1, advance=6)
-    #         progress.update(task2, advance=4)
-    #         progress.update(task3, advance=5)
-    #         time.sleep(0.02)
+        while not progress.finished:
+            progress.update(task1, advance=6)
+            progress.update(task2, advance=4)
+            progress.update(task3, advance=5)
+            time.sleep(0.02)
     
     print(layout)
     
