@@ -1,0 +1,60 @@
+{
+    "sections": {
+        "bulk": {
+            "meals": [
+                {
+                    "name": "Chicken and rice",
+                    "description": "Grilled chicken breast with brown rice and steamed vegetables"
+                },
+                {
+                    "name": "Beef stir-fry",
+                    "description": "Lean beef strips stir-fried with broccoli, carrots, and onions"
+                },
+                {
+                    "name": "Protein shake",
+                    "description": "Whey protein powder mixed with almond milk, banana, and peanut butter"
+                },
+                {
+                    "name": "Turkey chili",
+                    "description": "Ground turkey, beans, tomatoes, and spices simmered together"
+                },
+                {
+                    "name": "Baked salmon",
+                    "description": "Salmon fillet baked with garlic, lemon, and dill"
+                },
+                {
+                    "name": "Sweet potato and black bean bowl",
+                    "description": "Roasted sweet potato cubes, black beans, avocado, and salsa"
+                }
+            ]
+        },
+        "cut": {
+            "meals": [
+                {
+                    "name": "Grilled fish and vegetables",
+                    "description": "Grilled salmon fillet with roasted asparagus and sweet potato"
+                },
+                {
+                    "name": "Tuna salad",
+                    "description": "Mixed greens topped with canned tuna, cherry tomatoes, and avocado"
+                },
+                {
+                    "name": "Protein smoothie",
+                    "description": "Greek yogurt, spinach, frozen berries, and protein powder blended together"
+                },
+                {
+                    "name": "Egg white omelette",
+                    "description": "Egg whites filled with spinach, mushrooms, and low-fat cheese"
+                },
+                {
+                    "name": "Grilled chicken salad",
+                    "description": "Mixed greens topped with grilled chicken breast, cucumber, and bell peppers"
+                },
+                {
+                    "name": "Stir-fry vegetables with tofu",
+                    "description": "Tofu stir-fried with a variety of colorful vegetables and soy sauce"
+                }
+            ]
+        }
+    }
+}

@@ -127,6 +127,8 @@ with open('C:\\Users\\hadir\\Documents\\VSC - Projects\\Python\\Protein-Packs\Co
                   for line in file:
                         usernames = line.split()[0]
                         passwords = line.split()[1]
+                        weight = line.split()[2]
+                        target = line.split()[3]
                         
 if ((username == usernames ) and (password == passwords)):
     print(Panel.fit(f"[b]Welcome back {username}, System is updating ...[/]", title = "Welcome", title_align = "left", border_style = "bold green", box = box.SQUARE))
