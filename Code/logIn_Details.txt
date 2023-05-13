@@ -1,2 +1,2 @@
-rao pass1word
-gymbro pass2word 52 bulk
+rao pass1word cut
+gymbro pass2word bulk

@@ -111,6 +111,14 @@ def Discounts_Promotions_3():
     
     return panel3
 
+def weight_graph():
+    y_values = np.random.uniform(low=0.0, high=10.0, size=50)
+
+    # create chart using asciichartpy module
+    chart = asciichartpy.plot(y_values, {"height": 25, "width": 50})
+    
+    return Panel(chart, title="Weght Analysis", title_align = "left", border_style = "bold white", box = box.SQUARE)
+
 layout["Header"].size = 3
 layout["Footer"].size = 3
 layout["Header"].update(Header())
@@ -119,32 +127,37 @@ layout["left_Box1"].update(Order_Database())
 layout["Discount_Panel1"].update(Discounts_Promotions_1())
 layout["Discount_Panel2"].update(Discounts_Promotions_2())
 layout["Discount_Panel3"].update(Discounts_Promotions_3())
+layout["right_Box2"].update(weight_graph())
 
 
 username = Prompt.ask("Enter your Username")
 password = Prompt.ask("Enter your password")
+weight_target = Prompt.ask("Enter your target")
 with open('C:\\Users\\hadir\\Documents\\VSC - Projects\\Python\\Protein-Packs\Code\\logIn_Details.txt','r') as file:
                   for line in file:
                         usernames = line.split()[0]
                         passwords = line.split()[1]
-                        weight = line.split()[2]
-                        target = line.split()[3]
+                        target = line.split()[2]
                         
 if ((username == usernames ) and (password == passwords)):
-    print(Panel.fit(f"[b]Welcome back {username}, System is updating ...[/]", title = "Welcome", title_align = "left", border_style = "bold green", box = box.SQUARE))
+    # print(Panel.fit(f"[b]Welcome back {username}, System is updating ...[/]", title = "Welcome", title_align = "left", border_style = "bold green", box = box.SQUARE))
     
-    with Progress() as progress:
+    # with Progress() as progress:
 
-        task1 = progress.add_task("[red]Downloading...", total=1000)
-        task2 = progress.add_task("[green]Processing...", total=1000)
-        task3 = progress.add_task("[blue]Uploading...", total=1000)
+    #     task1 = progress.add_task("[red]Downloading...", total=1000)
+    #     task2 = progress.add_task("[green]Processing...", total=1000)
+    #     task3 = progress.add_task("[blue]Uploading...", total=1000)
 
-        while not progress.finished:
-            progress.update(task1, advance=6)
-            progress.update(task2, advance=4)
-            progress.update(task3, advance=5)
-            time.sleep(0.02)
+    #     while not progress.finished:
+    #         progress.update(task1, advance=6)
+    #         progress.update(task2, advance=4)
+    #         progress.update(task3, advance=5)
+    #         time.sleep(0.02)
     
     print(layout)
+    
+    if (weight_target == "Bulk"):
+        from Meal_planner import Bulk
+        Bulk()
 else:
     print(Panel("Username or Password does not match the database", border_style = "bold red", box = box.SQUARE))

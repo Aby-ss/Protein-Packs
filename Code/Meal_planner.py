@@ -12,14 +12,16 @@ from rich.table import Table
 with open("meals.json", "r") as f:
     data = json.load(f)
 
-# Print bulking meals
-print(Panel.fit("Bulking Meals", border_style = "bold red", box = box.SQUARE))
-bulking_meals = data["sections"]["bulk"]["meals"]
-for meal in bulking_meals:
-    print(Panel.fit(f"{meal['name']}\n{meal['description']}\n"))
+def Bulk():
+    # Print bulking meals
+    print(Panel.fit("Bulking Meals", border_style = "bold red", box = box.SQUARE))
+    bulking_meals = data["sections"]["bulk"]["meals"]
+    for meal in bulking_meals:
+        print(Panel.fit(f"{meal['name']}\n{meal['description']}\n"))
 
-# Print cutting meals
-print(Panel.fit("Cutting Meals", border_style = "bold blue", box = box.SQUARE))
-cutting_meals = data["sections"]["cut"]["meals"]
-for meal in cutting_meals:
-    print(Panel.fit(f"{meal['name']}\n{meal['description']}\n"))
+def Cut():
+    # Print cutting meals
+    print(Panel.fit("Cutting Meals", border_style = "bold blue", box = box.SQUARE))
+    cutting_meals = data["sections"]["cut"]["meals"]
+    for meal in cutting_meals:
+        print(Panel.fit(f"{meal['name']}\n{meal['description']}\n"))
