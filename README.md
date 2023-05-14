@@ -24,3 +24,7 @@
 - **✅ Loyalty Programs and Discounts** 🛍️ **The mobile application can also offer loyalty programs and discounts to incentivize customers to continue using our service. This would help build customer loyalty and encourage repeat business.**
 
 **Integrating a mobile application into our business would not only enhance the customer experience but also provide us with valuable data and insights into our customers' preferences and behavior. This would allow us to make data-driven decisions and improve our service based on customer feedback.**
+
+## Progress
+
+![image](https://github.com/Aby-ss/Protein-Packs/assets/103417697/f708b8ed-cf53-4529-82e5-f4fc494f7598)
