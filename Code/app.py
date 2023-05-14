@@ -49,6 +49,11 @@ layout["right_Box1"].split_column(
     Layout(name = "Discount_Panel3", size = 4)
 )
 
+layout["left_Box2"].split_column(
+    Layout(name = "Subscription_management"),
+    Layout(name = "Customer_Support")
+)
+
 class Header:
 
     def __rich__(self) -> Panel:
@@ -119,6 +124,16 @@ def weight_graph():
     
     return Panel(chart, title="Weght Analysis", title_align = "left", border_style = "bold white", box = box.SQUARE)
 
+def Subscription_man():
+    Sub_man = Panel.fit("[b red]20 days left until expising[/]\n[b green]89% progress made[/]\n[b yellow]45 meals consumed[/]", title = "Subcription Manager", title_align = "left", border_style = "bold white", box = box.SQUARE)
+    
+    return Sub_man
+
+def CS():
+    Customer_sup = Panel.fit("Call [b]+658-15-681-52\nEmail @ [b]proteinpacks@gmail.com\nVisit our website @ [b]protein-packs.com", title = "Customer Support", title_align = "left", border_style = "bold white", box = box.SQUARE)
+    
+    return Customer_sup
+
 layout["Header"].size = 3
 layout["Footer"].size = 3
 layout["Header"].update(Header())
@@ -128,6 +143,8 @@ layout["Discount_Panel1"].update(Discounts_Promotions_1())
 layout["Discount_Panel2"].update(Discounts_Promotions_2())
 layout["Discount_Panel3"].update(Discounts_Promotions_3())
 layout["right_Box2"].update(weight_graph())
+layout["Subscription_management"].update(Subscription_man())
+layout["Customer_Support"].update(CS())
 
 
 username = Prompt.ask("Enter your Username")
