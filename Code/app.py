@@ -74,7 +74,7 @@ class Footer:
         grid.add_column(justify="center", ratio=1)
         grid.add_column(justify="right")
         grid.add_row(
-            "💻", "[b]Stock[/]Mate", "🍞")
+            "💻", "[b]Protein[/]Packs", "🍞")
         return Panel(grid, style="green on black")
     
 
