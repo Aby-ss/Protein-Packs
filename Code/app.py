@@ -112,7 +112,7 @@ def Discounts_Promotions_3():
     return panel3
 
 def weight_graph():
-    y_values = np.random.uniform(low=0.0, high=10.0, size=50)
+    y_values = [10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 27, 29, 30, 25, 20, 23, 24, 30, 35, 38, 40, 56, 56, 57, 58, 67]
 
     # create chart using asciichartpy module
     chart = asciichartpy.plot(y_values, {"height": 25, "width": 50})
@@ -159,5 +159,8 @@ if ((username == usernames ) and (password == passwords)):
     if (weight_target == "Bulk"):
         from Meal_planner import Bulk
         Bulk()
+    elif (weight_target == "Cut"):
+        from Meal_planner import Cut
+        Cut()
 else:
     print(Panel("Username or Password does not match the database", border_style = "bold red", box = box.SQUARE))
